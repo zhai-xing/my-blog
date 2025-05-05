@@ -1,44 +1,39 @@
-name: Deploy Hexo Blog
+name: Deploy hexo blog
+env:
+  HEXO_STRICT: "false"
 on:
   push:
-    branches: [ "master" ]
-
+    branches:
+      - "master"
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      # 1. 检出代码（强制初始化子模块）
       - uses: actions/checkout@v3
         with:
-          submodules: recursive
-          fetch-depth: 0
+          ref: "master"
 
-      # 2. 设置 Node.js 18 环境（含 npm 缓存）
-      - uses: actions/setup-node@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
         with:
           node-version: "18"
-          cache: npm
 
-      # 3. 安装依赖（全局 hexo + 项目依赖）
-      - name: Install dependencies
+      - name: Setup yarn & Install node_modules
+        uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: install
+
+      - name: Check yarn & node version
         run: |
-          npm install -g hexo-cli --silent
-          npm ci --omit=optional
+          echo "Node version is `node -v`"
+          echo "Yarn version is `yarn -v`"
 
-      # 4. 构建部署
       - name: Build & Deploy
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          # 配置 Git 身份
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-
-          # 自动修复部署配置
-          sed -i'' "s~git@github.com:~https://${GH_TOKEN}@github.com/~" _config.yml
-          sed -i'' "s~https://github.com/~https://${GH_TOKEN}@github.com/~" _config.yml
-
-          # 强制清理并部署
-          rm -rf .deploy_git public
-          hexo clean && hexo generate --debug
-          hexo deploy --verbose
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          sed -i'' "s~git@github.com:~https://${{ secrets.GH_TOKEN }}@github.com/~" _config.yml
+          rm -rf .deploy_git
+          yarn clean
+          yarn build
+          yarn deploy
