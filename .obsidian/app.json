@@ -3,6 +3,12 @@
     "node_modules/",
     "public/",
     "scaffolds/",
-    "themes/"
-  ]
+    "themes/",
+    "source/about/",
+    "source/tags/",
+    "source/_data/",
+    "source/friends/"
+  ],
+  "newFileLocation": "folder",
+  "newFileFolderPath": "source/_posts"
 }
