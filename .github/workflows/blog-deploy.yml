@@ -22,13 +22,31 @@ jobs:
         with:
           node-version: 18
 
+      - name: Install Hexo CLI globally
+        run: npm install -g hexo-cli
+
+      - name: Check Hexo version
+        run: hexo -v
+
       - name: Install dependencies
         run: npm install
+
+      - name: Install additional plugins
+        run: |
+          npm i hexo-renderer-multi-markdown-it --save
+          npm i hexo-autoprefixer --save
+          npm i hexo-algolia --save
+          npm i hexo-algoliasearch --save
+          npm i hexo-symbols-count-time --save
+          npm i hexo-feed --save
 
       - name: Check Node.js and npm versions
         run: |
           echo "Node version: $(node -v)"
           echo "npm version: $(npm -v)"
+
+      - name: Output pipeline version
+        run: echo "Pipeline version: ${{ github.run_number }}"
 
       - name: Configure Git
         run: |
