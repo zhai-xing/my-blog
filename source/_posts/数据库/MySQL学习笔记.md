@@ -4,6 +4,7 @@ permalink: MySQL学习笔记
 sticky: true
 cover: https://blog-1259743669.cos.ap-chengdu.myqcloud.com/image-20230905225131183.png
 date: 2023-09-04 22:46:36
+description: 这是显示在首页的概述，正文内容均会被隐藏。
 tags:
 - [原理]
 - [学习笔记]

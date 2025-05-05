@@ -4,6 +4,7 @@ permalink: Redis学习笔记
 sticky: true
 cover: https://blog-1259743669.cos.ap-chengdu.myqcloud.com/020a1051d89f40bd92ad4ce455860ff5.jpg
 date: 2023-09-05 22:57:10
+description: 这是显示在首页的概述，正文内容均会被隐藏。
 tags:
 - [原理]
 - [学习笔记]
