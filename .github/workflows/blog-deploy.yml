@@ -1,47 +1,39 @@
-name: Deploy Hexo Blog
+name: Deploy hexo blog
+env:
+  HEXO_STRICT: "false"
 on:
   push:
-    branches: [ "master" ]
-
+    branches:
+      - "master"
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      # 1. 检出代码（包含子模块）
       - uses: actions/checkout@v3
         with:
-          submodules: recursive  # 重要！确保 Shoka 主题子模块被拉取
-          fetch-depth: 0
+          ref: "master"
 
-      # 2. 设置 Node.js 环境（建议 16+）
-      - name: Setup Node.js
+      - name: Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: "18"
+          node-version: "14"
 
-      # 3. 安装 Hexo CLI 和依赖
-      - name: Install Hexo and dependencies
+      - name: Setup yarn & Install node_modules
+        uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: install
+
+      - name: Check yarn & node version
         run: |
-          npm install -g hexo-cli  # 全局安装 Hexo
-          npm install  # 安装 package.json 里的依赖
+          echo "Node version is `node -v`"
+          echo "Yarn version is `yarn -v`"
 
-      # 4. 检查环境
-      - name: Check versions
-        run: |
-          echo "Node.js: $(node -v)"
-          echo "Hexo: $(hexo -v)"
-          git submodule status  # 检查主题子模块
-
-      # 5. 清理、生成和部署
       - name: Build & Deploy
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          
-          # 替换部署仓库的 URL（如果需要）
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
           sed -i'' "s~git@github.com:~https://${{ secrets.GH_TOKEN }}@github.com/~" _config.yml
-          
-          # Hexo 清理、生成和部署
-          hexo clean
-          hexo generate --debug  # 调试模式生成
-          hexo deploy
+          rm -rf .deploy_git
+          yarn clean
+          yarn build
+          yarn deploy
