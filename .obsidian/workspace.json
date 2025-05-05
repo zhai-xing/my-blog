@@ -15,7 +15,27 @@
               "state": {
                 "file": "source/_posts/text/text.md",
                 "mode": "source",
-                "source": false
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "text"
+            }
+          }
+        ]
+      },
+      {
+        "id": "5c85fc6c8b5f196e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3a14103e8ab91802",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "source/_posts/text/text.md",
+                "mode": "preview",
+                "source": true
               },
               "icon": "lucide-file",
               "title": "text"
@@ -192,9 +212,29 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "10d70b56adea36a7",
+  "active": "3a14103e8ab91802",
   "lastOpenFiles": [
-    "source/_posts/text",
+    "db.json",
+    "public/images/paypal.png",
+    "public/category/数据库/feed.json",
+    "public/category/text/feed.json",
+    "public/category/redis/feed.json",
+    "public/category/数据库/atom.xml",
+    "public/category/redis/atom.xml",
+    "public/tag/test/feed.json",
+    "public/tag/原理/feed.json",
+    "public/tag/学习笔记/feed.json",
+    "public/tag/原理/atom.xml",
+    "public/tag/test/atom.xml",
+    "public/images/logo.svg",
+    "public/images/search.png",
+    "public/images/play_disc.png",
+    "public/images/wechatpay.png",
+    "public/images/play_needle.png",
+    "public/images/apple-touch-icon.png",
+    "public/images/avatar.jpg",
+    "public/images/alipay.png",
+    "public/images/404.png",
     "source/_posts/测试的.md",
     "source/_posts/text/text.md",
     "source/_posts/hello-world.md",
@@ -202,17 +242,9 @@
     "source/_posts/Redis/tesx.md",
     "未命名.md",
     "未命名 1.md",
-    "未命名",
     "未命.md",
     "source/_obsidian/Post Template.md",
-    "hexo_log.txt",
-    "push.bat",
-    "push.txt",
-    "push",
-    "新建文本文档.txt",
-    "node_modules/fsevents",
     "未命名 1.canvas",
-    "source/_obsidian",
     "未命名.canvas"
   ]
 }
