@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "74ed8cb4ca519332",
+        "id": "7aea8247b2fabe09",
         "type": "tabs",
         "children": [
           {
-            "id": "1bb5d3d8b6cc44ad",
+            "id": "b71642fbd4afc32c",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -69,8 +69,19 @@
               "icon": "lucide-bookmark",
               "title": "书签"
             }
+          },
+          {
+            "id": "30197a78f10af7de",
+            "type": "leaf",
+            "state": {
+              "type": "file-tree-view",
+              "state": {},
+              "icon": "sheets-in-box",
+              "title": "File Tree"
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -90,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "collapseAll": false,
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -143,13 +154,23 @@
               "icon": "lucide-list",
               "title": "大纲"
             }
+          },
+          {
+            "id": "15fb7ab1bd745791",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 621.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -158,9 +179,20 @@
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
-      "command-palette:打开命令面板": false
+      "command-palette:打开命令面板": false,
+      "publish:发布更改": false,
+      "file-tree-alternative:File Tree Alternative Plugin": false,
+      "githobs:Manage a github issue": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "1bb5d3d8b6cc44ad",
-  "lastOpenFiles": []
+  "active": "15fb7ab1bd745791",
+  "lastOpenFiles": [
+    "source/_obsidian/Post Template.md",
+    "source/_posts/hello-world.md",
+    "source/_posts/数据库/MySQL学习笔记.md",
+    "未命名 1.canvas",
+    "source/_obsidian",
+    "未命名.canvas"
+  ]
 }
