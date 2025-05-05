@@ -4,7 +4,6 @@ date: 2022-12-03 14:52:55
 type: "friends"
 ---
 
-{% links %}
 - site: Baka-Blog
   owner: Baka-Blog
   url:  https://ztfcoder.github.io/
@@ -23,8 +22,6 @@ type: "friends"
   desc:  ddd
   image: 
   color: "#e9546b"
-
-{% endlinks %}
 
   
 
