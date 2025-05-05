@@ -1,4 +1,6 @@
 name: Deploy hexo blog
+env:
+  HEXO_STRICT: "false"
 on:
   push:
     branches:
