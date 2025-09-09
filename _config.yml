@@ -31,6 +31,7 @@ i18n_dir: :lang
 skip_render:
 
 # Writing
+
 new_post_name: :category/:title # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
